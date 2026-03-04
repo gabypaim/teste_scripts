@@ -45,3 +45,49 @@ janelas.forEach((janela) => {
     });
 
 });
+
+
+let clicado = false
+const bar = document.getElementById("winxp");
+
+//abrir icones
+const icons = document.querySelectorAll('.icons .icon');
+
+icons.forEach(icon => {
+    icon.addEventListener('click', function(){
+        const winid = this.getAttribute('data-id');
+        const barid = this.getAttribute('data-barid');
+        const nameid = this.getAttribute('data-name')
+
+       abrir(winid,barid,nameid)
+
+    });
+});
+
+//criar os icones na barra
+function abrir(winid, barid, nameid) {
+    const winele = document.getElementById(winid);
+    winele.style.display = "block";
+
+    const existebarra = document.getElementById(barid)
+    if (!existebarra) {
+        const barraele = document.createElement("div");
+        barraele.id = barid;
+        barraele.classList.add('bar');
+        barraele.textContent = (nameid);
+        barraele.style.display = "block"
+        bar.appendChild(barraele);
+    }
+};
+
+//preciso fazer uma função que deixe a ultima janela que cliquei em prioridade em cima das outras e deixe a barra azul
+let zindex = 1
+
+janelas.forEach((janela) => {
+    janela.addEventListener('click', function () {
+        zindex = zindex + 1;
+        janela.style.zIndex = zindex;
+    });
+});
+
+// como faço pra deixar só a barra azul da janela com maior index >:
