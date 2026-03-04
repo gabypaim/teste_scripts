@@ -47,7 +47,6 @@ janelas.forEach((janela) => {
 });
 
 
-let clicado = false
 const bar = document.getElementById("winxp");
 
 //abrir icones
@@ -63,11 +62,14 @@ icons.forEach(icon => {
 
     });
 });
+//descobri que eu não precisava fazer um data atributte para id mas vou deixar assim
 
 //criar os icones na barra
 function abrir(winid, barid, nameid) {
     const winele = document.getElementById(winid);
     winele.style.display = "block";
+
+    winele.dataset.barid = barid;
 
     const existebarra = document.getElementById(barid)
     if (!existebarra) {
@@ -87,7 +89,26 @@ janelas.forEach((janela) => {
     janela.addEventListener('click', function () {
         zindex = zindex + 1;
         janela.style.zIndex = zindex;
+
+        // como faço pra deixar só a barra azul da janela com maior index >:
+
     });
 });
 
-// como faço pra deixar só a barra azul da janela com maior index >:
+
+function fechar(botao) {
+    const janela = botao.closest(".janelas");
+    const barid = janela.dataset.barid;
+    const barra = document.getElementById(barid);
+
+    janela.style.display = "none";
+
+    if (barra) {
+        barra.remove();
+    }
+}
+
+function minimizar(botao) {
+    const janela = botao.closest(".janelas");
+    janela.style.display = "none";   
+}
