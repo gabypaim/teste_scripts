@@ -11,13 +11,17 @@
         <main class="screen">
             
             <div class="icons">
-                <div class="icon" id="mypc" data-id="explorer" data-barid="barmypc" data-name="My computer"><p>computericon</p></div>
-                <div class="icon" id="fold" data-id="folder" data-barid="barart" data-name="Folder"><p>folder</p></div>
+                <div class="icon" id="mypc" data-id="mycomputer" data-barid="barmypc" data-name="My computer" onclick="abrir(this)">
+                    <p>computericon</p>
+                </div>
+                <div class="icon" id="fold" data-id="folder" data-barid="barart" data-name="Folder" onclick="abrir(this)">
+                    <p>folder</p>
+                </div>
             </div>
 
             
             
-            <div  class="janelas" id="explorer">
+            <div  class="janelas" id="mycomputer">
                <div class="topo">
                 explorer
                    <div class="buttons">
@@ -50,6 +54,7 @@
 
         <img src="computerazul.png" alt="" class="pc-frame">
     </div>
+    <script src="teste3.js"></script>
     <script src="delimitarjanelas.js"></script>
 </body>
 </html>

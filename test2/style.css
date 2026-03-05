@@ -60,7 +60,7 @@ body {
     background-color: green;
 }
 
-#explorer {
+#mycomputer {
     display: none;
     background-color: rgb(181, 210, 236);
 }
@@ -116,10 +116,7 @@ body {
     cursor: default;   
 }
 
-#barart {
-    display: none;
+.bar:hover {
+    cursor: pointer;
 }
 
-#barmypc {
-    display: none;
-}
